@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LoveTravel</title>
-
+    <title>Around The World</title>
     <link rel="stylesheet" href="styles.css" />
-
     <link rel="shortcut icon" href="/img/turismo.png" type="image/x-icon" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,28 +14,52 @@
     />
   </head>
   <body>
-    <!--Encabezado-->
+    <!-- Header -->
     <header>
-      <!--Menú-->
       <nav>
         <ul>
           <li><a href="#">INICIO</a></li>
           <li><a href="#">NOSOTROS</a></li>
-          <li><a href="#">DESTINOS</a></li>
           <li><a href="#">PAQUETES</a></li>
+          <li><a href="#">DESTINOS</a></li>
+          <li><a href="#">CONTACTO</a></li>
+        </ul>
+      </nav>
+
+      <!--Menú de navegación desplegable-->
+      <input type="checkbox" id="toggle-menu" />
+      <label
+        for="toggle-menu"
+        class="abrir-menu"
+        data-open="☰"
+        data-close="✖"
+      ></label>
+      <nav class="menu">
+        <img
+          src="/img/turismoblanco.png"
+          alt="Around The World Agencia de Turismo"
+        />
+        <ul class="lista-menu">
+          <li><a href="#">INICIO</a></li>
+          <li><a href="#">NOSOTROS</a></li>
+          <li><a href="#">PAQUETES</a></li>
+          <li><a href="#">DESTINOS</a></li>
           <li><a href="#">CONTACTO</a></li>
         </ul>
       </nav>
 
       <section class="textos-header">
-        <img src="/img/turismo.png" alt="LoveTravel Agencia de Turismo" />
-        <h3>LoveTravel Agencia de Turismo</h3>
-        <h1>¡Disfruta de las vacaciones de tus sueños!</h1>
+        <img
+          src="/img/turismoblanco.png"
+          alt="Around The World Agencia de Turismo"
+        />
+        <h3>Around The World Agencia de Turismo</h3>
+        <h1>¡Disfrutá de las vacaciones de tus sueños!</h1>
         <h2>
           Te llevamos a donde quieras ir. Recorre el mundo entero de la forma
           más sencilla.
         </h2>
-        <button class="boton-inicio">Conocé más</button>
+        <a href="#planificador" class="boton-inicio">Conocé más</a>
       </section>
 
       <!--Ola decorativa-->
@@ -57,31 +78,35 @@
     </header>
 
     <main>
-      <section class="planificador">
+      <section id="planificador" class="planificador">
         <div class="contenedor">
           <h2 class="titulo">
-            ¡Déjanos planificarte las vacaciones perfectas!
+            ¡Dejanos planificarte las vacaciones perfectas!
           </h2>
           <div class="planificador-cont">
             <div class="planificador-ind">
-              <img src="/img/foto2.jfif" alt="Cities" />
-              <h3>Cities</h3>
+              <img src="/img/foto2.jfif" alt="Ciudades" />
+              <h3>Ciudades</h3>
             </div>
             <div class="planificador-ind">
-              <img src="/img/foto4.jfif" alt="Beaches" />
-              <h3>Beaches</h3>
+              <img src="/img/foto4.jfif" alt="Playas" />
+              <h3>Playas</h3>
             </div>
             <div class="planificador-ind">
-              <img src="/img/foto5.jfif" alt="Hiking" />
-              <h3>Hiking</h3>
+              <img src="/img/foto5.jfif" alt="senderismo" />
+              <h3>Senderismo</h3>
             </div>
             <div class="planificador-ind">
-              <img src="/img/foto6.jfif" alt="Cruises" />
-              <h3>Cruises</h3>
+              <img src="/img/foto6.jfif" alt="Cruceros" />
+              <h3>Cruceros</h3>
             </div>
             <div class="planificador-ind">
-              <img src="/img/foto7.jfif" alt="Parks" />
-              <h3>Parks</h3>
+              <img src="/img/foto7.jfif" alt="Parques" />
+              <h3>Parques</h3>
+            </div>
+            <div class="planificador-ind">
+              <img src="/img/foto3.jfif" alt="Museos" />
+              <h3>Museos</h3>
             </div>
           </div>
         </div>
@@ -94,25 +119,65 @@
             <div class="imagen-ofertas">
               <img src="/img/foto8.avif" alt="Turquía" />
               <div class="hover-galeria">
-                <p>Turquía</p>
+                <h3>Turquía</h3>
+                <p>Desde Lun 10 Jun</p>
+                <p>Hasta Sáb 15 jun</p>
               </div>
             </div>
             <div class="imagen-ofertas">
               <img src="/img/foto9.jpg" alt="España" />
               <div class="hover-galeria">
-                <p>España</p>
+                <h3>España</h3>
+                <p>Desde Vie 8 Nov</p>
+                <p>Hasta Vie 15 Nov</p>
               </div>
             </div>
             <div class="imagen-ofertas">
               <img src="/img/foto10.jpg" alt="Reino Unido" />
               <div class="hover-galeria">
-                <p>Reino Unido</p>
+                <h3>Reino Unido</h3>
+                <p>Desde Lun 27 May</p>
+                <p>Hasta Sáb 01 Jun</p>
               </div>
             </div>
             <div class="imagen-ofertas">
               <img src="/img/foto11.jpg" alt="Europa Oriental" />
               <div class="hover-galeria">
-                <p>Europa Oriental</p>
+                <h3>Europa Oriental</h3>
+                <p>Desde Dom 12 May</p>
+                <p>Hasta Vie 17 May</p>
+              </div>
+            </div>
+            <div class="imagen-ofertas">
+              <img src="/img/foto12.jfif" alt="Estados Unidos" />
+              <div class="hover-galeria">
+                <h3>Estados Unidos</h3>
+                <p>Desde Dom 23 Jun</p>
+                <p>Hasta Lun 01 Jul</p>
+              </div>
+            </div>
+            <div class="imagen-ofertas">
+              <img src="/img/foto13" alt="Brasil" />
+              <div class="hover-galeria">
+                <h3>Brasil</h3>
+                <p>Desde Sab 25 May</p>
+                <p>Hasta Jue 30 May</p>
+              </div>
+            </div>
+            <div class="imagen-ofertas">
+              <img src="/img/foto14.jfif" alt="Australia" />
+              <div class="hover-galeria">
+                <h3>Australia</h3>
+                <p>Desde Sáb 07 Sep</p>
+                <p>Hasta Mié 11 Sep</p>
+              </div>
+            </div>
+            <div class="imagen-ofertas">
+              <img src="/img/foto15.jfif" alt="Japón" />
+              <div class="hover-galeria">
+                <h3>Japón</h3>
+                <p>Desde Mar 25 Jun</p>
+                <p>Hasta Mié 03 Jul</p>
               </div>
             </div>
           </div>
@@ -120,38 +185,42 @@
       </section>
 
       <section class="clientes-contenedor">
-        <h2 class="titulo-clientes">¿Por qué viajar con LoveTravel?</h2>
-        <h3 class="subtitulo">Lo que opinan nuestros clientes</h3>
-        <div class="cards">
-          <div class="card">
-            <img src="/img/foto12.webp" alt="Imagen cliente" />
-            <div class="contenido-texto-card">
-              <h4>Ana Parrado</h4>
-              <p>
-                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Itaque, illum."
-              </p>
+        <div class="contenedor">
+          <h2 class="titulo-clientes">¿Por qué viajar con Around The World?</h2>
+          <h3 class="subtitulo">Lo que opinan nuestros clientes</h3>
+          <div class="cards">
+            <div class="card">
+              <img src="/img/foto12.webp" alt="Imagen cliente" />
+              <div class="contenido-texto-card">
+                <h4>Ana Parrado</h4>
+                <p>
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Itaque, illum."
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="/img/foto13.jfif" alt="Imagen cliente" />
-            <div class="contenido-texto-card">
-              <h4>Josep Gil</h4>
-              <p>
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia,
-                sapiente."
-              </p>
+            <div class="card">
+              <img src="/img/foto13.jfif" alt="Imagen cliente" />
+              <div class="contenido-texto-card">
+                <h4>Josep Gil</h4>
+                <p>
+                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quia, sapiente."
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="consultas"></section>
     </main>
 
     <footer>
       <div class="contenedor-footer">
         <div class="contenido-footer">
           <h4>Teléfono</h4>
-          <p>1234567891</p>
+          <p>3407-469240</p>
         </div>
         <div class="contenido-footer">
           <h4>Correo Electrónico</h4>
@@ -162,7 +231,7 @@
           <p>Ramallo, Buenos Aires, Argentina</p>
         </div>
       </div>
-      <h2 class="titulo-final">&copy; LoveTravel</h2>
+      <h2 class="titulo-final">&copy; Around The World</h2>
     </footer>
   </body>
 </html>

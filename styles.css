@@ -12,8 +12,8 @@ body {
 /*  Header */
 header {
   width: 100%;
-  height: 600px;
-  background: url(/img/foto1.jpg);
+  height: 800px;
+  background: url(/img/fotoplaya2.jpg);
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -30,18 +30,108 @@ nav li {
 }
 
 nav li > a {
+  padding: 10px 15px;
   color: #fff;
   font-weight: 300;
   text-decoration: none;
+  border-radius: 15px;
 }
 
 nav li > a:hover {
-  text-decoration: underline;
+  box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
   transform: scale(1.2);
 }
 
+/*Menú de naavegación desplegable*/
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #7ba5b3;
+  transition: left 0.3s;
+  z-index: 2;
+}
+
+.menu img {
+  height: 70px;
+  width: auto;
+  align-items: center;
+}
+
+#toggle-menu {
+  display: none;
+}
+
+.abrir-menu {
+  display: none;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 2;
+  transition: left 0.3s;
+  border-radius: 50%;
+}
+
+.abrir-menu::after {
+  content: attr(data-open);
+}
+
+#toggle-menu:checked + .abrir-menu::after {
+  content: attr(data-close);
+}
+
+.lista-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-menu li {
+  padding: 10px 0;
+}
+
+.lista-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.lista-menu a:hover {
+  background-color: #cadfe1;
+}
+
+#toggle-menu:checked ~ .menu {
+  left: 0;
+}
+
+#toggle-menu:checked ~ .abrir-menu {
+  left: 250px;
+}
+
+#toggle-menu:checked ~ .contenido {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+/*----------------------------*/
+
 .textos-header img {
-  height: 50px;
+  height: 100px;
   width: auto;
 }
 
@@ -55,12 +145,13 @@ header .nav {
 
 header .textos-header {
   display: flex;
-  height: 500px;
+  height: 600px;
   width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  text-shadow: 1px 1px 30px #59838f;
 }
 
 .textos-header h3 {
@@ -89,17 +180,19 @@ header .textos-header {
 }
 
 .boton-inicio {
+  font-family: "Sedan", Arial, Helvetica, sans-serif;
   background-color: #7ba5b3;
   color: #fff;
   border: none;
   margin: 10px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 18px;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-size: 23px;
   cursor: pointer;
   transition: background-color 0.3s;
   position: relative;
   box-shadow: 0 0 6px 0 rgb(0, 0, 0, 0.5);
+  text-decoration: none;
 }
 
 .boton-inicio:hover {
@@ -194,23 +287,15 @@ header .textos-header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #fff;
 }
 
 .imagen-ofertas:hover .hover-galeria {
   transform: scale(1);
 }
 
-.hover-galeria img {
-  width: 50px;
-}
-
-.hover-galeria p {
-  color: #fff;
-}
-
 /* CLIENTES */
 .titulo-clientes {
-  margin: 70px 0 0 0;
   color: #59838f;
   font-size: 40px;
   text-align: center;
@@ -300,16 +385,23 @@ footer {
 }
 
 /* DISEÑO RESPONSIVO */
-@media screen and (max-width: 820px) {
-  header {
-    background-position: center;
+@media screen and (max-width: 900px) {
+  /*Planificador*/
+  .planificador-cont {
+    flex-wrap: wrap;
+  }
+
+  .planificador-ind h3 {
+    margin: 0 0 25px 0;
   }
 
   /*Ofertas*/
   .imagen-ofertas {
     width: 44%;
   }
+}
 
+@media screen and (max-width: 800px) {
   /*Clientes*/
   .cards {
     flex-direction: column;
@@ -326,31 +418,132 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
-  header {
-    background-position: center;
+@media screen and (max-width: 690px) {
+  .menu {
+    display: unset;
   }
 
-  .textos-header h3 {
-    font-size: 15px;
-    font-weight: 300;
-    margin: 20px;
+  .abrir-menu {
+    display: unset;
   }
 
-  .textos-header h1 {
-    font-size: 30px;
+  /*Header*/
+  nav {
+    display: none;
   }
 
-  .textos-header h2 {
-    font-size: 18px;
-    margin: 10px;
-  }
-
+  /*Footer*/
   .contenedor-footer {
     flex-direction: column;
   }
 
   .contenido-footer p {
     margin: 0 0 30px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .textos-header h3 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 20px;
+  }
+
+  .textos-header h1 {
+    font-size: 46px;
+  }
+
+  .textos-header h2 {
+    font-size: 26px;
+    margin: 10px;
+  }
+
+  .hover-galeria {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  /*Clientes*/
+  .titulo-clientes {
+    font-size: 35px;
+  }
+
+  .subtitulo {
+    font-size: 25px;
+  }
+
+  .titulo {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  .planificador-ind {
+    width: 44%;
+  }
+
+  .imagen-ofertas {
+    width: 88%;
+  }
+
+  .textos-header h3 {
+    font-size: 12px;
+    font-weight: 300;
+    margin: 20px;
+  }
+
+  .textos-header h1 {
+    font-size: 42px;
+  }
+
+  .textos-header h2 {
+    font-size: 22px;
+    margin: 10px;
+  }
+
+  .boton-inicio {
+    padding: 15px 25px;
+    font-size: 20px;
+  }
+
+  .titulo {
+    font-size: 30px;
+  }
+
+  .titulo-clientes {
+    font-size: 30px;
+  }
+
+  .subtitulo {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .textos-header h1 {
+    font-size: 35px;
+  }
+
+  .textos-header h2 {
+    font-size: 15px;
+    margin: 10px;
+  }
+
+  .boton-inicio {
+    padding: 15px 25px;
+    font-size: 20px;
+  }
+
+  .titulo {
+    font-size: 24px;
+  }
+
+  .titulo-clientes {
+    font-size: 24px;
+  }
+
+  .subtitulo {
+    font-size: 15px;
   }
 }
